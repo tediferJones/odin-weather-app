@@ -5,13 +5,26 @@ html, body, #content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* margin: 48px; */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
 
     background-color: #D4D4D4;
 }
 
-.searchbar {
-    margin: 48px;
+.inputContainer {
+    width: 100%;
+    padding: 48px;
+    background-color: whitesmoke;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+}
+
+.formContainer {
+    display: flex;
+    gap: 24px;
 }
 
 .gridContainer {
@@ -20,12 +33,12 @@ html, body, #content {
 
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 48px;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 12px;
 }
 
 .dataContainer {
-    background-color: white;
+    background-color: whitesmoke;
     border-radius: 16px;
 
     display: flex;
@@ -36,6 +49,16 @@ html, body, #content {
 
 }
 
-.main {
-    grid-row: 1 / -1;
+.dataTitle {
+    font-weight: bold;
+    width: 80%;
 }
+
+.station {
+    grid-column: 1 / -1;
+}
+
+.main {
+    grid-row: 2 / -1;
+}
+

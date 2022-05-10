@@ -3,15 +3,21 @@ import DOMInputForm from './DOMInputForm';
 import DOMDisplayController from './DOMDisplayController';
 
 function cleanUpData001(weatherDataObj, units) {
+  console.log(weatherDataObj.name); //
   const sanitizedWeatherData = {
+    station: { location: weatherDataObj.name }, //
     main: weatherDataObj.main,
     sunriseSunset: {
       sunrise: new Date(weatherDataObj.sys.sunrise * 1000).toLocaleTimeString(),
       sunset: new Date(weatherDataObj.sys.sunset * 1000).toLocaleTimeString(),
     },
-    general: { weather: weatherDataObj.weather[0].description },
+    general: {
+      weather: weatherDataObj.weather[0].description,
+      icon: weatherDataObj.weather[0].icon,
+    },
     wind: weatherDataObj.wind,
   };
+  console.log(sanitizedWeatherData);
   let myUnits = null;
   if (units === 'imperial') {
     myUnits = { temp: '°F', speed: 'MPH' };
@@ -50,13 +56,10 @@ async function getWeatherFromZip(zipcode, country = 'us', units = 'imperial') {
 }
 
 DOMInputForm();
-getWeatherFromZip(15215, 'us', 'imperial');
 
 document.querySelector('.submitBtn').addEventListener('click', () => {
-  console.log(document.querySelector('.formContainer').location.value);
-  console.log(document.querySelector('.formContainer').units.value);
+  getWeatherFromZip(document.querySelector('.formContainer').location.value, 'us', document.querySelector('.formContainer').units.value)
 });
 
-// hook up form for user input, should include selector for Celcius or Fahrenheit
 // Need to clean up zip input
 //    - number between 0 and 99999, if less than 5 digits, prepend 0s till length === 5

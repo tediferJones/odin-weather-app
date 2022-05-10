@@ -8,6 +8,7 @@ const DOMInputForm = (() => {
   const searchbar = document.createElement('input');
   searchbar.classList.add('searchbar');
   searchbar.setAttribute('name', 'location');
+  searchbar.setAttribute('placeholder', 'Zipcode');
   formContainer.appendChild(searchbar);
 
   const fahrLabel = document.createElement('label');
@@ -40,13 +41,6 @@ const DOMInputForm = (() => {
   const submitBtn = document.createElement('button');
   submitBtn.classList.add('submitBtn');
   submitBtn.textContent = 'Get Weather';
-  // submitBtn.addEventListener('click', () => {
-  //   console.log(document.querySelector('.formContainer').location.value);
-  //   console.log(document.querySelector('.formContainer').units.value);
-  //   const currentDisplay = document.createElement('div');
-  //   currentDisplay.textContent = `Showing Weather for ${document.querySelector('.formContainer').location.value}`;
-  //   document.querySelector('#content').appendChild(currentDisplay);
-  // });
   inputContainer.appendChild(submitBtn);
 
   document.querySelector('#content').appendChild(inputContainer);
