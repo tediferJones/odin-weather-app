@@ -1,6 +1,6 @@
 html, body, #content {
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -13,13 +13,14 @@ html, body, #content {
 
 .inputContainer {
     width: 100%;
-    padding: 48px;
+    padding: 48px 0px;
     background-color: whitesmoke;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 48px;
+    gap: 24px;
 }
 
 .formContainer {
@@ -27,26 +28,45 @@ html, body, #content {
     gap: 24px;
 }
 
+.submitBtn {
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 16px;
+
+    background-color: royalblue;
+    border: none;
+    outline: none;
+    padding: 12px;
+    border-radius: 16px;
+
+}
+
 .gridContainer {
     width: 80%;
-    margin: 48px;
+    margin: 24px;
 
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr 2fr 2fr;
     gap: 12px;
 }
 
 .dataContainer {
     background-color: whitesmoke;
     border-radius: 16px;
+    box-shadow: 4px 6px darkgray;
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     gap: 24px;
 
+}
+
+.dataContainer.main {
+    font-size: 24px;
+    gap: 48px;
 }
 
 .dataTitle {
@@ -62,3 +82,7 @@ html, body, #content {
     grid-row: 2 / -1;
 }
 
+.errorMsg {
+    color: red;
+    font-weight: bold;
+}

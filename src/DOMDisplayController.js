@@ -17,7 +17,6 @@ const DOMDisplayController = ((superObj) => {
     for (const key in superObj[objKey]) {
       let data = null;
       if (key === 'icon') {
-        console.log(key, superObj[objKey][key]);
         data = document.createElement('img');
         data.src = `https://openweathermap.org/img/wn/${superObj[objKey][key]}@2x.png`;
       } else {

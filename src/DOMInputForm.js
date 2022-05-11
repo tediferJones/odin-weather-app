@@ -8,7 +8,7 @@ const DOMInputForm = (() => {
   const searchbar = document.createElement('input');
   searchbar.classList.add('searchbar');
   searchbar.setAttribute('name', 'location');
-  searchbar.setAttribute('placeholder', 'Zipcode');
+  searchbar.setAttribute('placeholder', '5 digit US zipcode');
   formContainer.appendChild(searchbar);
 
   const fahrLabel = document.createElement('label');
