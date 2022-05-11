@@ -45,7 +45,7 @@ async function getWeatherData(lat, lon, units) {
 }
 
 async function getWeatherFromZip(zipcode, country = 'us', units = 'imperial') {
-  const response = await fetch(`http://api.openweathermap.org/geo/1.0/zip?zip=${zipcode},${country}&appid=41abf8f82ecf917e239e4a79363e88bc`, { mode: 'cors' });
+  const response = await fetch(`https://api.openweathermap.org/geo/1.0/zip?zip=${zipcode},${country}&appid=41abf8f82ecf917e239e4a79363e88bc`, { mode: 'cors' });
   const coors = await response.json();
   return getWeatherData(coors.lat, coors.lon, units);
 }
